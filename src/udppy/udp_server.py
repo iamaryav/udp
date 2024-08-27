@@ -6,10 +6,10 @@ bufferSize = 1024
 msgFromServer = "Hello UDP client\n"
 bytesToSend = str.encode(msgFromServer)
 
-# Create a datagram socket
+# Creating a socket
 UDPServerSocket = socket.socket(family=socket.AF_INET, type=socket.SOCK_DGRAM)
 
-# Bind to port and ip to socket
+# Bind port and ip to socket
 UDPServerSocket.bind((ip, port))
 
 # Listen for incoming datagrams
@@ -23,3 +23,5 @@ while (True):
 
     # Sending a reply to client
     UDPServerSocket.sendto(bytesToSend, address)
+
+# To stop the server press ctrl + c in command line
